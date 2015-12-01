@@ -1,0 +1,16 @@
+{
+  "name": "translation",
+  "version": "1.0.0",
+  "description": "A test translation app to see if Angular and Flask templates can be used together in an app",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-angular-gettext": "^2.1.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

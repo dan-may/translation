@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.6\n"
+"Last-Translator: Dan May <daniel.may@logicnow.com>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+#: templates/fruits-angular.html:13
+msgid "A big translatable list of fruit"
+msgstr "Une grande liste de fruit translatable"
+
+#: templates/fruits-angular.html:17
+msgid "blueberries"
+msgstr "bleuberrie"
+
+#: templates/fruits-angular.html:19 templates/fruits-angular.html:23
+msgid "cranberries"
+msgstr "cranberrie"
+
+#. This is a translator comment
+#: static/js/controllers/translationCtrl.js:14
+msgid "Hello"
+msgstr "Allo"
+
+#: templates/fruits-angular.html:16
+msgid "kiwi"
+msgstr "kioui"
+
+#: templates/fruits-angular.html:15
+msgid "lychees"
+msgstr "lichee"
+
+#: static/js/controllers/translationCtrl.js:17
+msgid "One Bird"
+msgid_plural "{{$count}} Birds"
+msgstr[0] "Une bird"
+msgstr[1] "Des birds"
+
+#: templates/fruits-angular.html:18
+msgid "raspberries"
+msgstr ""

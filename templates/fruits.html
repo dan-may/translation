@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main>
+    <h1>A big list of <strong>static</strong> fruits</h1>
+
+    <p>{% block main %}A block to test{% endblock %}</p>
+
+    <p>{% trans %}A big translatable list of fruit{% endtrans %}</p>
+    <ul>
+        <li>{% trans %}bananas{% endtrans %}</li>
+        <li>{% trans %}apples{% endtrans %}</li>
+        <li>{% trans %}pears{% endtrans %}</li>
+        <li>{% trans %}oranges{% endtrans %}</li>
+        <li>{% trans %}grapefruit{% endtrans %}</li>
+    </ul>
+    <ul>
+        <li>Duplicate test:</li>
+        <li>{% trans %}grapefruit{% endtrans %}</li>
+    </ul>
+    <ul>
+        <li>Expression test:</li>
+        <li>{{ gettext('starfruit') }}</li>
+    </ul>
+    <hr>
+
+<h1>BIG PARAGRAPH</h1>
+<p>{% trans %}First you need to mark all the strings you want to translate in your application with gettext() or ngettext(). After that, it’s time to create a .pot file. A .pot file contains all the strings and is the template for a .po file which contains the translated strings. Babel can do all that for you. First you need to mark all the strings you want to translate in your application with gettext() or ngettext(). After that, it’s time to create a .pot file. A .pot file contains all the strings and is the template for a .po file which contains the translated strings. Babel can do all that for you. First you need to mark all the strings you want to translate in your application with gettext() or ngettext(). After that, it’s time to create a .pot file. A .pot file contains all the strings and is the template for a .po file which contains the translated strings. Babel can do all that for you.{% endtrans %}</p>
+
+    <h1>A big list of <strong>static</strong> fruits with html inside trans block</h1>
+
+    <p>{% trans %} A <strong>translatable</strong> list of <em>fruit</em> with html{% endtrans %}</p>
+
+    <p>{% trans %}A <a href="http://www.myitfinder.com">link</a> inside this translate block{% endtrans %}</p>
+
+    {% autoescape false %}
+        <p>{{ gettext('%(nickname)s said something:', nickname = '<a href="%s">%s</a>' % ('dan', 'may')) }}</p>
+    {% endautoescape %}
+
+    <h1>A big list of fruits that change their quantity based on json input (pluralise test)</h1>
+
+    <ul>
+        {% for fruit in data if not fruit.list %}
+            <li>{{ fruit.fruit }}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for item in data %}
+            {% if item.list %}
+                {% for string in item.list %}
+                    <li>{{ string.string }}</li>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="translationApp" data-framework="angularjs">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{{ url_for('static', filename='angular/angular.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='angular-gettext/dist/angular-gettext.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/controllers/translationCtrl.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/translations.js') }}"></script>
+</head>
+<body ng-controller="TranslationCtrl">
+<h1>Angular fruits</h1>
+
+<p translate>A big translatable list of fruit</p>
+<ul>
+    <li translate>lychees</li>
+    <li translate>kiwi</li>
+    <li translate>blueberries</li>
+    <li translate>raspberries</li>
+    <li translate>cranberries</li>
+</ul>
+<ul>
+    <li>Duplicate test:</li>
+    <li translate>cranberries</li>
+</ul>
+
+
+<button ng-click="translateEN()">EN</button>
+<button ng-click="translateFR()">FR</button>
+
+
+</body>
+</html>

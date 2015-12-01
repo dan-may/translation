@@ -1,0 +1,21 @@
+{
+  "name": "translation",
+  "authors": [
+    "dan-may <danjamesmay@gmail.com>"
+  ],
+  "description": "a test app to see if we can translate angular and flask simultaneously",
+  "main": "templates/fruits.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-gettext": "~2.1.2"
+  }
+}

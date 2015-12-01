@@ -1,0 +1,41 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: templates/fruits-angular.html:13
+msgid "A big translatable list of fruit"
+msgstr ""
+
+#: templates/fruits-angular.html:17
+msgid "blueberries"
+msgstr ""
+
+#: templates/fruits-angular.html:19
+#: templates/fruits-angular.html:23
+msgid "cranberries"
+msgstr ""
+
+#. This is a translator comment
+#: static/js/controllers/translationCtrl.js:14
+msgid "Hello"
+msgstr ""
+
+#: templates/fruits-angular.html:16
+msgid "kiwi"
+msgstr ""
+
+#: templates/fruits-angular.html:15
+msgid "lychees"
+msgstr ""
+
+#: static/js/controllers/translationCtrl.js:17
+msgid "One Bird"
+msgid_plural "{{$count}} Birds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/fruits-angular.html:18
+msgid "raspberries"
+msgstr ""
