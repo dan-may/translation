@@ -40,6 +40,12 @@
         .pot file contains all the strings and is the template for a .po file which contains the translated strings.
         Babel can do all that for you.{% endtrans %}</p>
 
+    <p>{% trans %}First you need to mark all the strings you want to translate in your application with gettext() or
+        ngettext(). After that, it’s time to create a .pot file. A .pot file contains all the strings and is the
+        template for a .po file which contains the translated strings. Babel can do all that for you. First you need to
+        mark all the strings you want to translate in your application with gettext() or ngettext(). After that, it’s
+        time to create a .pot file.{% endtrans %}</p>
+
     <h1>A big list of <strong>static</strong> fruits with html inside trans block</h1>
 
     <p>{% trans %} A <strong>translatable</strong> list of <em>fruit</em> with html{% endtrans %}</p>

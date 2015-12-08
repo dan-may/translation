@@ -25,7 +25,7 @@ def get_locale():
 
 @app.route('/')
 def hello_world():
-    return u'Hello World!'
+    return _(u'Hello World!')
 
 
 @app.route('/fruits')

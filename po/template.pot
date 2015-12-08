@@ -4,7 +4,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: templates/fruits-angular.html:14
+#: templates/fruits-angular.html:31
+msgid ""
+"A .pot file contains all the strings and is the template for a .po file which\n"
+"    contains the translated strings. Babel can do all that for you. First you need to mark all the strings you want\n"
+"    to translate in your application with gettext() or ngettext(). After that, it’s time to create a .pot file. A\n"
+"    .pot file contains all the strings and is the template for a .po file which contains the translated strings.\n"
+"    Babel can do all that for you."
+msgstr ""
+
+#: templates/fruits-angular.html:54
 msgid "A big translatable list of fruit"
 msgstr ""
 
@@ -12,13 +21,50 @@ msgstr ""
 msgid "Another piece of text"
 msgstr ""
 
-#: templates/fruits-angular.html:18
+#: templates/fruits-angular.html:44
+msgid ""
+"Apricots can be eaten fresh or dried - both are packed with vitamins! Fresh apricots have a soft and slightly furry\n"
+"    skin. They make a good lunchbox snack. Apricots are also high in beta-carotene - this helps us keep our eyes and\n"
+"    skin healthy."
+msgstr ""
+
+#: templates/fruits-angular.html:58
 msgid "blueberries"
 msgstr ""
 
-#: templates/fruits-angular.html:20
-#: templates/fruits-angular.html:24
+#: templates/fruits-angular.html:60
+#: templates/fruits-angular.html:64
 msgid "cranberries"
+msgstr ""
+
+#: templates/fruits-angular.html:25
+msgid ""
+"First you need to mark all the strings you want to translate in your application with gettext() or\n"
+"    ngettext(). After that, it’s time to create a .pot file. A .pot file contains all the strings and is the\n"
+"    template for a .po file which contains the translated strings. Babel can do all that for you. First you need to\n"
+"    mark all the strings you want to translate in your application with gettext() or ngettext(). After that, it’s\n"
+"    time to create a .pot file."
+msgstr ""
+
+#: templates/fruits-angular.html:15
+msgid ""
+"First you need to mark all the strings you want to translate in your application with gettext() or\n"
+"    ngettext(). After that, it’s time to create a .pot file. A .pot file contains all the strings and is the\n"
+"    template for a .po file which contains the translated strings. Babel can do all that for you. First you need to\n"
+"    mark all the strings you want to translate in your application with gettext() or ngettext(). After that, it’s\n"
+"    time to create a .pot file. A .pot file contains all the strings and is the template for a .po file which\n"
+"    contains the translated strings. Babel can do all that for you. First you need to mark all the strings you want\n"
+"    to translate in your application with gettext() or ngettext(). After that, it’s time to create a .pot file. A\n"
+"    .pot file contains all the strings and is the template for a .po file which contains the translated strings.\n"
+"    Babel can do all that for you."
+msgstr ""
+
+#: templates/fruits-angular.html:37
+msgid ""
+"Granny Smith, Royal Gala, Golden Delicious and Pink Lady are just a few of the thousands of different kinds of apple\n"
+"    that are grown around the world! You can make dried apple rings at home - ask an adult to help you take out the\n"
+"    core, thinly slice the apple and bake the rings in the oven at a low heat. - See more at:\n"
+"    http://www.greatgrubclub.com/a-z-fruit-veg#.VmbSHuOLRTY"
 msgstr ""
 
 #. This is a translator comment
@@ -26,11 +72,11 @@ msgstr ""
 msgid "Hello"
 msgstr ""
 
-#: templates/fruits-angular.html:17
+#: templates/fruits-angular.html:57
 msgid "kiwi"
 msgstr ""
 
-#: templates/fruits-angular.html:16
+#: templates/fruits-angular.html:56
 msgid "lychees"
 msgstr ""
 
@@ -41,6 +87,10 @@ msgid_plural "{{$count}} Birds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/fruits-angular.html:19
+#: templates/fruits-angular.html:59
 msgid "raspberries"
+msgstr ""
+
+#: templates/fruits-angular.html:50
+msgid "What is it: Lead generation ‘directory’ for our customers that helps them acquire new customers"
 msgstr ""
