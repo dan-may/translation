@@ -4,38 +4,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: templates/fruits-angular.html:13
+#: templates/fruits-angular.html:14
 msgid "A big translatable list of fruit"
 msgstr ""
 
-#: templates/fruits-angular.html:17
+#: static/js/controllers/translationCtrl.js:17
+msgid "Another piece of text"
+msgstr ""
+
+#: templates/fruits-angular.html:18
 msgid "blueberries"
 msgstr ""
 
-#: templates/fruits-angular.html:19
-#: templates/fruits-angular.html:23
+#: templates/fruits-angular.html:20
+#: templates/fruits-angular.html:24
 msgid "cranberries"
 msgstr ""
 
 #. This is a translator comment
-#: static/js/controllers/translationCtrl.js:14
+#: static/js/controllers/translationCtrl.js:15
 msgid "Hello"
 msgstr ""
 
-#: templates/fruits-angular.html:16
+#: templates/fruits-angular.html:17
 msgid "kiwi"
 msgstr ""
 
-#: templates/fruits-angular.html:15
+#: templates/fruits-angular.html:16
 msgid "lychees"
 msgstr ""
 
-#: static/js/controllers/translationCtrl.js:17
+#. Another comment for the translator: translate as plural please
+#: static/js/controllers/translationCtrl.js:20
 msgid "One Bird"
 msgid_plural "{{$count}} Birds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/fruits-angular.html:18
+#: templates/fruits-angular.html:19
 msgid "raspberries"
 msgstr ""

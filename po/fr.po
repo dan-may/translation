@@ -45,4 +45,4 @@ msgstr[1] "Des birds"
 
 #: templates/fruits-angular.html:18
 msgid "raspberries"
-msgstr ""
+msgstr "raspberrie"

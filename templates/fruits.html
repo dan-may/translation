@@ -28,8 +28,17 @@
     </ul>
     <hr>
 
-<h1>BIG PARAGRAPH</h1>
-<p>{% trans %}First you need to mark all the strings you want to translate in your application with gettext() or ngettext(). After that, it’s time to create a .pot file. A .pot file contains all the strings and is the template for a .po file which contains the translated strings. Babel can do all that for you. First you need to mark all the strings you want to translate in your application with gettext() or ngettext(). After that, it’s time to create a .pot file. A .pot file contains all the strings and is the template for a .po file which contains the translated strings. Babel can do all that for you. First you need to mark all the strings you want to translate in your application with gettext() or ngettext(). After that, it’s time to create a .pot file. A .pot file contains all the strings and is the template for a .po file which contains the translated strings. Babel can do all that for you.{% endtrans %}</p>
+    <h1>BIG PARAGRAPH</h1>
+
+    <p>{% trans %}First you need to mark all the strings you want to translate in your application with gettext() or
+        ngettext(). After that, it’s time to create a .pot file. A .pot file contains all the strings and is the
+        template for a .po file which contains the translated strings. Babel can do all that for you. First you need to
+        mark all the strings you want to translate in your application with gettext() or ngettext(). After that, it’s
+        time to create a .pot file. A .pot file contains all the strings and is the template for a .po file which
+        contains the translated strings. Babel can do all that for you. First you need to mark all the strings you want
+        to translate in your application with gettext() or ngettext(). After that, it’s time to create a .pot file. A
+        .pot file contains all the strings and is the template for a .po file which contains the translated strings.
+        Babel can do all that for you.{% endtrans %}</p>
 
     <h1>A big list of <strong>static</strong> fruits with html inside trans block</h1>
 
@@ -38,23 +47,22 @@
     <p>{% trans %}A <a href="http://www.myitfinder.com">link</a> inside this translate block{% endtrans %}</p>
 
     {% autoescape false %}
-        <p>{{ gettext('%(nickname)s said something:', nickname = '<a href="%s">%s</a>' % ('dan', 'may')) }}</p>
+    <p>{{ gettext('%(nickname)s said something:', nickname = '<a href="%s">%s</a>' % ('dan', 'may')) }}</p>
     {% endautoescape %}
 
     <h1>A big list of fruits that change their quantity based on json input (pluralise test)</h1>
 
+    <h4>The raw data</h4>
+    {{ data }}
+
+    <h4>When we access the data, the unicode strings are displayed properly</h4>
     <ul>
-        {% for fruit in data if not fruit.list %}
-            <li>{{ fruit.fruit }}</li>
+        {% for fruit in data.fruits %}
+            <li>{{ fruit.fruit }} ({{ fruit.type }})</li>
         {% endfor %}
-    </ul>
-    <ul>
-        {% for item in data %}
-            {% if item.list %}
-                {% for string in item.list %}
-                    <li>{{ string.string }}</li>
-                {% endfor %}
-            {% endif %}
+        <hr>
+        {% for string in data.list %}
+            <li>string: {{ string.string }}</li>
         {% endfor %}
     </ul>
 </main>

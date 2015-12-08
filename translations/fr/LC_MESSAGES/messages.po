@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-12-01 15:14+0000\n"
+"POT-Creation-Date: 2015-12-07 12:09+0000\n"
 "PO-Revision-Date: 2015-12-01 15:20+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -42,27 +42,27 @@ msgctxt "This text is part of a button used for exiting a pop-up"
 msgid "Cancel"
 msgstr ""
 
-#: views.py:55
+#: views.py:56
 msgid "lime"
 msgstr ""
 
-#: views.py:56
+#: views.py:57
 msgid "continental"
 msgstr ""
 
-#: views.py:59 templates/fruits.html:27
+#: views.py:60 templates/fruits.html:27
 msgid "starfruit"
 msgstr ""
 
-#: views.py:60
+#: views.py:61
 msgid "exotic"
 msgstr ""
 
-#: views.py:63
+#: views.py:64
 msgid "strawberry"
 msgstr ""
 
-#: views.py:64
+#: views.py:65
 msgid "native"
 msgstr ""
 

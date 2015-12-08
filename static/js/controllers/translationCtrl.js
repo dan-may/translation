@@ -14,6 +14,11 @@ translationAppControllers.controller('TranslationCtrl', ['$scope', '$location', 
 	/// This is a translator comment
 	var comment = gettext("Hello");
 
+    var another = gettextCatalog.getString("Another piece of text");
+
+    /// Another comment for the translator: translate as plural please
+    var myString2 = gettextCatalog.getPlural(3, "One Bird", "{{$count}} Birds", {});
+
     console.log('Went into the controller');
 
     $scope.translateFR = function () {

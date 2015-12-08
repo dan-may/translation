@@ -1,8 +1,8 @@
-from flask import Flask, render_template, json, request, jsonify
-from flask.ext.babel import Babel, gettext, ngettext, pgettext, npgettext, lazy_gettext, lazy_pgettext, _, get_locale
-from config import LANGUAGES
-
 import random
+
+from flask import Flask, render_template, jsonify
+from flask.ext.babel import Babel, gettext, ngettext, pgettext, npgettext, _
+from flask.json import dumps
 
 app = Flask(__name__)
 # config
@@ -17,72 +17,138 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale():
+    # for testing, hard code the language to show
     return 'fr'
+    # in production use the below to change language based on http 'accept-languages' header:
     # return request.accept_languages.best_match(LANGUAGES.keys())
 
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return u'Hello World!'
 
 
 @app.route('/fruits')
 @app.route('/fruits/<int:number>')
 def fruits(number=1):
-    # some server side data (analogous to titles in card_generators)
+    # some server side data (analogous to title strings in card_generators)
 
     # NOTE: this is a comment the translators will see; directing them to not translate the replacement string
-    singular = gettext('Here is a basic string to translate')
+    singular = gettext(u'Here is a basic string to translate')
     # however comments without the 'NOTE:' comment tag will not be processed into the POT file
 
     # notice that singular strings that use gettext() are aliased to _() for brevity
-    singular_replacement = _('Here is a string that has a %(replacement)s string', replacement='replacement')
+    singular_replacement = _(u'Here is a string that has a %(replacement)s string', replacement=u'replacement')
 
     # when we have a plural, we have to use ngettext()
     num_pears = random.randint(1, 10)
-    plural = ngettext('Here is %(num)s pear', 'Here are %(num)s pears', num=num_pears)
+    plural = ngettext(u'Here is %(num)s pear', u'Here are %(num)s pears', num=num_pears)
 
     # we can also send a context to the translator to give them more info on what they are translating
-    singular_context = pgettext('This text is part of a button used for exiting a pop-up', 'Cancel')
+    singular_context = pgettext(u'This text is part of a button used for exiting a pop-up', u'Cancel')
 
-    plural_context = npgettext('This is part of a spinner on a fruit wheel',
-                               'A lovely pair of oranges',
-                               'A lovely trio of oranges',
-                               number or 1)
+    plural_context = npgettext(u'This is part of a spinner on a fruit wheel',
+                               u'%(num)s orange',
+                               u'%(num)s oranges',
+                               num=(number or 1))
 
-    data = [
-        {
-            'fruit': _('lime'),
-            'type': _('continental')
-        },
-        {
-            'fruit': _('starfruit'),
-            'type': _('exotic')
-        },
-        {
-            'fruit': _('strawberry'),
-            'type': _('native')
-        },
-        {'list': [
-            {
-                'string': singular
-            },
-            {
-                'string': singular_replacement
-            },
-            {
-                'string': plural
-            },
-            {
-                'string': singular_context
-            },
-            {
-                'string': plural_context
-            }
-        ]}
-    ]
-    print data
+    data = {
+               'fruits': [
+                   {
+                       'fruit': _(u'lime'),
+                       'type': _(u'continental')
+                   },
+                   {
+                       'fruit': _(u'starfruit'),
+                       'type': _(u'exotic')
+                   },
+                   {
+                       'fruit': _(u'strawberry'),
+                       'type': _(u'native')
+                   }
+               ],
+                'list': [
+                    {
+                        'string': singular
+                    },
+                    {
+                        'string': singular_replacement
+                    },
+                    {
+                        'string': plural
+                    },
+                    {
+                        'string': singular_context
+                    },
+                    {
+                        'string': plural_context
+                    }
+                ]
+           }
+
     return render_template('fruits.html', number=number, data=data)
+
+
+@app.route('/fruits-json')
+@app.route('/fruits-json/<int:number>')
+def fruits_json(number=1):
+    # duplicating the strings already set in the first view, to test how babel handles duplication
+
+    # NOTE: this is a comment the translators will see; directing them to not translate the replacement string
+    singular = gettext(u'Here is a basic string to translate')
+    # however comments without the 'NOTE:' comment tag will not be processed into the POT file
+
+    # notice that singular strings that use gettext() are aliased to _() for brevity
+    singular_replacement = _(u'Here is a string that has a %(replacement)s string', replacement=u'replacement')
+
+    # when we have a plural, we have to use ngettext()
+    num_pears = random.randint(1, 10)
+    plural = ngettext(u'Here is %(num)s pear', u'Here are %(num)s pears', num=num_pears)
+
+    # we can also send a context to the translator to give them more info on what they are translating
+    singular_context = pgettext(u'This text is part of a button used for exiting a pop-up', u'Cancel')
+
+    plural_context = npgettext(u'This is part of a spinner on a fruit wheel',
+                               u'%(num)s orange',
+                               u'%(num)s oranges',
+                               num=(number or 1))
+
+    data = {
+           'fruits': [
+               {
+                   'fruit': _(u'lime'),
+                   'type': _(u'continental')
+               },
+               {
+                   'fruit': _(u'starfruit'),
+                   'type': _(u'exotic')
+               },
+               {
+                   'fruit': _(u'strawberry'),
+                   'type': _(u'native')
+               }
+           ],
+            'list': [
+                {
+                    'string': singular
+                },
+                {
+                    'string': singular_replacement
+                },
+                {
+                    'string': plural
+                },
+                {
+                    'string': singular_context
+                },
+                {
+                    'string': plural_context
+                }
+            ]
+       }
+
+    # JSON Response
+    return jsonify(data)
 
 
 @app.route('/fruits-angular')
