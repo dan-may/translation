@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-12-08 12:59+0000\n"
+"POT-Creation-Date: 2015-12-09 15:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,54 +17,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.1.1\n"
 
+#. NOTE: part a1
+#. NOTE: part a
+#: test_strings.py:6 views.py:56
+msgid "first part"
+msgstr ""
+
+#. NOTE: part b1
+#. NOTE: part b
+#: test_strings.py:9 views.py:59
+msgid "second part"
+msgstr ""
+
+#: test_strings.py:11
+msgctxt "Three"
+msgid "first part"
+msgstr ""
+
+#: test_strings.py:12
+msgctxt "Four"
+msgid "second part"
+msgstr ""
+
 #: views.py:28
 msgid "Hello World!"
 msgstr ""
 
 #. NOTE: this is a comment the translators will see; directing them to not
 #. translate the replacement string
-#: views.py:37 views.py:98
+#: views.py:37 views.py:108
 msgid "Here is a basic string to translate"
 msgstr ""
 
-#: views.py:41 views.py:102
+#: views.py:41 views.py:112
 #, python-format
 msgid "Here is a string that has a %(replacement)s string"
 msgstr ""
 
-#: views.py:45 views.py:106
+#: views.py:45 views.py:116
 #, python-format
 msgid "Here is %(num)s pear"
 msgid_plural "Here are %(num)s pears"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views.py:48 views.py:109
+#: views.py:48 views.py:119
 msgctxt "This text is part of a button used for exiting a pop-up"
 msgid "Cancel"
 msgstr ""
 
-#: views.py:58 views.py:119
+#: views.py:61
+msgctxt "One"
+msgid "first part"
+msgstr ""
+
+#: views.py:62
+msgctxt "Two"
+msgid "second part"
+msgstr ""
+
+#: views.py:68 views.py:129
 msgid "lime"
 msgstr ""
 
-#: views.py:59 views.py:120
+#: views.py:69 views.py:130
 msgid "continental"
 msgstr ""
 
-#: views.py:62 views.py:123 templates/fruits.html:27
+#: views.py:72 views.py:133 templates/fruits.html:27
 msgid "starfruit"
 msgstr ""
 
-#: views.py:63 views.py:124
+#: views.py:73 views.py:134
 msgid "exotic"
 msgstr ""
 
-#: views.py:66 views.py:127
+#: views.py:76 views.py:137
 msgid "strawberry"
 msgstr ""
 
-#: views.py:67 views.py:128
+#: views.py:77 views.py:138
 msgid "native"
 msgstr ""
 

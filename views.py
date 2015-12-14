@@ -52,6 +52,16 @@ def fruits(number=1):
                                u'%(num)s oranges',
                                num=(number or 1))
 
+    # NOTE: part a
+    comment_test = _(u'first part')
+
+    # NOTE: part b
+    comment_test_2 = _(u'second part')
+
+    context_test = pgettext(u'One', u'first part')
+    context_test2 = pgettext(u'Two', u'second part')
+
+
     data = {
                'fruits': [
                    {
