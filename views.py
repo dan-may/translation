@@ -1,35 +1,33 @@
 import random
 
-from flask import Flask, render_template, jsonify
-from flask.ext.babel import Babel, gettext, ngettext, pgettext, npgettext, _
+from flask import render_template, jsonify, request, Blueprint
+from flask.ext.babelex import gettext, ngettext, pgettext, npgettext, _
 from flask.json import dumps
+from __init__ import babel, create_app
+from config import LANGUAGES
 
-app = Flask(__name__)
-# config
-app.debug = True
-# insert i18n into Jinja template
-# env = Environment(extensions=['jinja2.ext.i18n'])
+trans = Blueprint("trans", __name__)
 
-# init babel (sets up Jinja extension for Flask)
-# more info: https://pythonhosted.org/Flask-Babel/#id1
-babel = Babel(app)
+print 'running through views'
 
 
 @babel.localeselector
 def get_locale():
+    print "hi"
     # for testing, hard code the language to show
-    return 'fr'
+    # return 'fr'
+    print request.accept_languages
     # in production use the below to change language based on http 'accept-languages' header:
-    # return request.accept_languages.best_match(LANGUAGES.keys())
+    return request.accept_languages.best_match(LANGUAGES.keys())
 
 
-@app.route('/')
+@trans.route('/')
 def hello_world():
     return _(u'Hello World!')
 
 
-@app.route('/fruits')
-@app.route('/fruits/<int:number>')
+@trans.route('/fruits')
+@trans.route('/fruits/<int:number>')
 def fruits(number=1):
     # some server side data (analogous to title strings in card_generators)
 
@@ -99,8 +97,8 @@ def fruits(number=1):
     return render_template('fruits.html', number=number, data=data)
 
 
-@app.route('/fruits-json')
-@app.route('/fruits-json/<int:number>')
+@trans.route('/fruits-json')
+@trans.route('/fruits-json/<int:number>')
 def fruits_json(number=1):
     # duplicating the strings already set in the first view, to test how babel handles duplication
 
@@ -161,10 +159,7 @@ def fruits_json(number=1):
     return jsonify(data)
 
 
-@app.route('/fruits-angular')
+@trans.route('/fruits-angular')
 def fruits_angular():
     return render_template('fruits-angular.html')
 
-
-if __name__ == '__main__':
-    app.run()
