@@ -39,7 +39,7 @@ msgstr "Une grande liste traduisible de fruits"
 
 #: static/js/controllers/translationCtrl.js:17
 msgid "Another piece of text"
-msgstr ""
+msgstr "Anothere piece de texte"
 
 #: templates/fruits-angular.html:44
 msgid ""
