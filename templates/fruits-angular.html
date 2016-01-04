@@ -65,6 +65,13 @@
 </ul>
 
 
+<h1>Dynamic stuff</h1>
+{% raw %}
+<p>Comment:{{ comment | translate }}</p>
+<p>Another: {{ another | translate }}</p>
+{% endraw %}
+
+
 <button ng-click="translateEN()">EN</button>
 <button ng-click="translateFR()">FR</button>
 

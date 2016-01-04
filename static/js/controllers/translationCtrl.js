@@ -13,8 +13,11 @@ translationAppControllers.controller('TranslationCtrl', ['$scope', '$location', 
 
 	/// This is a translator comment
 	var comment = gettext("Hello");
+    $scope.comment = comment;
 
-    var another = gettextCatalog.getString("Another piece of text");
+    // Replicate settings strings from data
+    var string = 'Another piece of text';
+    $scope.another = gettextCatalog.getString(string);
 
     /// Another comment for the translator: translate as plural please
     var myString2 = gettextCatalog.getPlural(3, "One Bird", "{{$count}} Birds", {});
@@ -26,6 +29,7 @@ translationAppControllers.controller('TranslationCtrl', ['$scope', '$location', 
         console.log(gettextCatalog.currentLanguage);
         gettextCatalog.setCurrentLanguage('fr');
         console.log(gettextCatalog.currentLanguage);
+        console.log(gettextCatalog);
     };
 
     $scope.translateEN = function () {
@@ -33,6 +37,7 @@ translationAppControllers.controller('TranslationCtrl', ['$scope', '$location', 
         console.log(gettextCatalog.currentLanguage);
         gettextCatalog.setCurrentLanguage('en');
         console.log(gettextCatalog.currentLanguage);
+        console.log(gettextCatalog);
     };
 
 
@@ -41,20 +46,20 @@ translationAppControllers.controller('TranslationCtrl', ['$scope', '$location', 
 	}
 
 
-    // Language switcher
-    $scope.languages = {
-        current: gettextCatalog.currentLanguage,
-        available: {
-        'fr': 'Francais',
-        'en': 'English'
-        }
-    };
-
-    $scope.$watch('languages.current', function (lang) {
-        if (!lang) {
-            return;
-        }
-
-        gettextCatalog.setCurrentLanguage(lang);
-    });
+    //// Language switcher
+    //$scope.languages = {
+    //    current: gettextCatalog.currentLanguage,
+    //    available: {
+    //    'fr': 'Francais',
+    //    'en': 'English'
+    //    }
+    //};
+    //
+    //$scope.$watch('languages.current', function (lang) {
+    //    if (!lang) {
+    //        return;
+    //    }
+    //
+    //    gettextCatalog.setCurrentLanguage(lang);
+    //});
 }]);
